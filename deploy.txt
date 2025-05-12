@@ -1,0 +1,15 @@
+forge create --rpc-url https://rpc.sepolia-api.lisk.com \
+--etherscan-api-key D399DBMKRXIJKG5DWI2F6SBWGGNPGZ169Q \
+src/Transfer.sol:Transfer \
+--via-ir \
+--broadcast \
+--optimize \
+--private-key 0x0c5c330f8e48dab25e71dfe6eb93f01dc6195798c6343e990e1ba788e45bb97c \
+--constructor-args 0xD63029C1a3dA68b51c67c6D1DeC3DEe50D681661
+
+forge verify-contract \
+  --rpc-url https://rpc.sepolia-api.lisk.com \
+  --verifier blockscout \
+  --verifier-url 'https://sepolia-blockscout.lisk.com/api/' \
+  0x489A22D1ba1a4f34eb7262E41dd4BDF90Fb685fB \
+src/Transfer.sol:Transfer
